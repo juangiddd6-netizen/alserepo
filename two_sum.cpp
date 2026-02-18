@@ -2,20 +2,19 @@
 using namespace std;
 class Solution {
 public:
-    bool isPalindrome(int x) {
-        string x_str = to_string(x);
-        int ptr1 = 0;
-        int ptr2 = x_str.size() - 1;
+    vector<int> twoSum(vector<int>& nums, int target) {
+        unordered_map<int, int> map;
 
-        while (ptr1 <= ptr2)
-        {
-            if (x_str[ptr1] != x_str[ptr2])
-            {
-                return false;
+        for (int i = 0; i < nums.size(); i++) {
+            int complement = target - nums[i];
+
+            if (map.find(complement) != map.end()) {
+                return {map[complement], i};
             }
-            ptr1++;
-            ptr2--;
+
+            map[nums[i]] = i;
         }
-        return true;
+        
+        return {};
     }
 };
