@@ -19,7 +19,7 @@ int main() {
         num2 = residuo;
     }
 
-    cout << "El MCD es: " << num1;
+    cout << "El MCD es: " << num1 << endl;
 
     return 0;
 }
